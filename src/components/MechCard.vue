@@ -1,5 +1,5 @@
 <template>
-  <v-card width="300" height="100%" class="mx-auto">
+  <v-card width="300" height="100%">
     <a :href="mech.link">
       <v-img class="align-end" :src="mech.imgSrc" max-height="200px" max-width="300px" contain></v-img>
     </a>

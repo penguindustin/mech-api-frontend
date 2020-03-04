@@ -2,12 +2,12 @@ import Vue from 'vue'
 import App from './App.vue'
 import vuetify from './plugins/vuetify';
 import VueRouter from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import HomePage from './components/HomePage'
 
 Vue.use(VueRouter)
 
 const routes = [
-  { path: '/', component: HelloWorld}
+  { path: '/', component: HomePage}
 ]
 
 const router = new VueRouter({

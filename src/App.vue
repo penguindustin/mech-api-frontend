@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark absolute>
+    <v-app-bar app color="primary mb-5" dark absolute>
       <div class="d-flex align-center"></div>
 
       <v-spacer></v-spacer>

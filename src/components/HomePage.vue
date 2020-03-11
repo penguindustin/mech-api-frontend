@@ -4,8 +4,8 @@
 
     <v-container>
       <v-row md="9" xs="12" justify="space-around">
-        <v-col v-for="(value, idx) in mechUrls" :key="idx" lg="3" md="3" sm="6" xs="12">
-          <MechCard :class="cardWidth" :mech="{title: '', imgSrc: value, blurb: 'blur', link: ''}" />
+        <v-col v-for="(value, idx) in mechData" :key="idx" lg="3" md="3" sm="6" xs="12">
+          <MechCard :class="cardWidth" :mech="value" />
         </v-col>
       </v-row>
     </v-container>
@@ -23,7 +23,7 @@ export default {
   },
   data: function() {
     return {
-      mechUrls: []
+      mechData: []
     };
   },
   computed: {
@@ -34,8 +34,12 @@ export default {
   },
   methods: {
     getMechUrls: async function() {
-      let p = await axios.get("http://127.0.0.1:5000/random/" + numCards);
-      this.mechUrls = p.data.map(path => "http://127.0.0.1:5000/" + path);
+      let p = await axios.get("http://127.0.0.1:5000/v1/random/" + numCards);
+      this.mechData = p.data.map(mech => {
+        mech.imgPath = "http://127.0.0.1:5000/" + mech.imgPath
+        return mech
+      });
+      console.log(this.mechData)
     }
   },
   mounted: function() {

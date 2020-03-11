@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Changelog
 - mech api integration for dynamic images
+- updated integration to use full mech data instead of just url
 
 ### Changed
 - layout to show 8 at a time
